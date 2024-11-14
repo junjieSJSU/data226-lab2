@@ -1,0 +1,10 @@
+snapshots:
+  - name: snapshot_stock_rsi
+    relation: ref('stock_rsi')
+    config:
+      unique_key:
+        - symbol
+        - date
+      strategy: timestamp
+      updated_at: date
+      invalidate_hard_deletes: True

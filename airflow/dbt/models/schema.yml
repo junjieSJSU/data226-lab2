@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stock_moving_averages
+    description: "Stock data containing date, symbol and calculated moving average"
+    columns:
+      - name: symbol
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: moving_average
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - symbol
+            - date
+  - name: stock_rsi
+    description: "Stock data containing date, symbol and RSI"
+    columns:
+      - name: symbol
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: rsi
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - symbol
+            - date

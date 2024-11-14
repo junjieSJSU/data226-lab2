@@ -1,0 +1,49 @@
+[2024-11-14T19:00:56.104+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-14T19:00:56.128+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stock_DAG_ELT_dbt.dbt_test manual__2024-11-14T19:00:47.068859+00:00 [queued]>
+[2024-11-14T19:00:56.134+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stock_DAG_ELT_dbt.dbt_test manual__2024-11-14T19:00:47.068859+00:00 [queued]>
+[2024-11-14T19:00:56.135+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-14T19:00:56.146+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2024-11-14 19:00:47.068859+00:00
+[2024-11-14T19:00:56.152+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stock_DAG_ELT_dbt', 'dbt_test', 'manual__2024-11-14T19:00:47.068859+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/Stock_DAG_ELT.py', '--cfg-path', '/tmp/tmpzyugo840']
+[2024-11-14T19:00:56.154+0000] {standard_task_runner.py:91} INFO - Job 87: Subtask dbt_test
+[2024-11-14T19:00:56.156+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4610) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-14T19:00:56.156+0000] {standard_task_runner.py:63} INFO - Started process 4611 to run task
+[2024-11-14T19:00:56.189+0000] {task_command.py:426} INFO - Running <TaskInstance: Stock_DAG_ELT_dbt.dbt_test manual__2024-11-14T19:00:47.068859+00:00 [running]> on host 214073c88124
+[2024-11-14T19:00:56.255+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stock_DAG_ELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2024-11-14T19:00:47.068859+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-14T19:00:47.068859+00:00'
+[2024-11-14T19:00:56.256+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-14T19:00:56.267+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-14T19:00:56.268+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/dbt --project-dir /opt/***/dbt']
+[2024-11-14T19:00:56.275+0000] {subprocess.py:86} INFO - Output:
+[2024-11-14T19:00:57.395+0000] {subprocess.py:93} INFO - [0m19:00:57  Running with dbt=1.8.7
+[2024-11-14T19:00:58.232+0000] {subprocess.py:93} INFO - [0m19:00:58  Registered adapter: snowflake=1.8.4
+[2024-11-14T19:00:59.177+0000] {subprocess.py:93} INFO - [0m19:00:59  Found 3 models, 8 data tests, 3 sources, 575 macros
+[2024-11-14T19:00:59.182+0000] {subprocess.py:93} INFO - [0m19:00:59
+[2024-11-14T19:01:00.051+0000] {subprocess.py:93} INFO - [0m19:01:00  Concurrency: 1 threads (target='dev')
+[2024-11-14T19:01:00.052+0000] {subprocess.py:93} INFO - [0m19:01:00
+[2024-11-14T19:01:00.060+0000] {subprocess.py:93} INFO - [0m19:01:00  1 of 8 START test dbt_utils_unique_combination_of_columns_stock_moving_averages_symbol__date  [RUN]
+[2024-11-14T19:01:01.027+0000] {subprocess.py:93} INFO - [0m19:01:01  1 of 8 PASS dbt_utils_unique_combination_of_columns_stock_moving_averages_symbol__date  [[32mPASS[0m in 0.96s]
+[2024-11-14T19:01:01.030+0000] {subprocess.py:93} INFO - [0m19:01:01  2 of 8 START test dbt_utils_unique_combination_of_columns_stock_rsi_symbol__date  [RUN]
+[2024-11-14T19:01:01.690+0000] {subprocess.py:93} INFO - [0m19:01:01  2 of 8 PASS dbt_utils_unique_combination_of_columns_stock_rsi_symbol__date ..... [[32mPASS[0m in 0.66s]
+[2024-11-14T19:01:01.693+0000] {subprocess.py:93} INFO - [0m19:01:01  3 of 8 START test not_null_stock_moving_averages_date .......................... [RUN]
+[2024-11-14T19:01:02.352+0000] {subprocess.py:93} INFO - [0m19:01:02  3 of 8 PASS not_null_stock_moving_averages_date ................................ [[32mPASS[0m in 0.66s]
+[2024-11-14T19:01:02.355+0000] {subprocess.py:93} INFO - [0m19:01:02  4 of 8 START test not_null_stock_moving_averages_moving_average ................ [RUN]
+[2024-11-14T19:01:03.178+0000] {subprocess.py:93} INFO - [0m19:01:03  4 of 8 PASS not_null_stock_moving_averages_moving_average ...................... [[32mPASS[0m in 0.82s]
+[2024-11-14T19:01:03.181+0000] {subprocess.py:93} INFO - [0m19:01:03  5 of 8 START test not_null_stock_moving_averages_symbol ........................ [RUN]
+[2024-11-14T19:01:03.956+0000] {subprocess.py:93} INFO - [0m19:01:03  5 of 8 PASS not_null_stock_moving_averages_symbol .............................. [[32mPASS[0m in 0.77s]
+[2024-11-14T19:01:03.959+0000] {subprocess.py:93} INFO - [0m19:01:03  6 of 8 START test not_null_stock_rsi_date ...................................... [RUN]
+[2024-11-14T19:01:04.799+0000] {subprocess.py:93} INFO - [0m19:01:04  6 of 8 PASS not_null_stock_rsi_date ............................................ [[32mPASS[0m in 0.84s]
+[2024-11-14T19:01:04.801+0000] {subprocess.py:93} INFO - [0m19:01:04  7 of 8 START test not_null_stock_rsi_rsi ....................................... [RUN]
+[2024-11-14T19:01:05.628+0000] {subprocess.py:93} INFO - [0m19:01:05  7 of 8 PASS not_null_stock_rsi_rsi ............................................. [[32mPASS[0m in 0.83s]
+[2024-11-14T19:01:05.631+0000] {subprocess.py:93} INFO - [0m19:01:05  8 of 8 START test not_null_stock_rsi_symbol .................................... [RUN]
+[2024-11-14T19:01:06.413+0000] {subprocess.py:93} INFO - [0m19:01:06  8 of 8 PASS not_null_stock_rsi_symbol .......................................... [[32mPASS[0m in 0.78s]
+[2024-11-14T19:01:06.418+0000] {subprocess.py:93} INFO - [0m19:01:06
+[2024-11-14T19:01:06.418+0000] {subprocess.py:93} INFO - [0m19:01:06  Finished running 8 data tests in 0 hours 0 minutes and 7.23 seconds (7.23s).
+[2024-11-14T19:01:06.469+0000] {subprocess.py:93} INFO - [0m19:01:06
+[2024-11-14T19:01:06.470+0000] {subprocess.py:93} INFO - [0m19:01:06  [32mCompleted successfully[0m
+[2024-11-14T19:01:06.470+0000] {subprocess.py:93} INFO - [0m19:01:06
+[2024-11-14T19:01:06.471+0000] {subprocess.py:93} INFO - [0m19:01:06  Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[2024-11-14T19:01:07.214+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-14T19:01:07.215+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-14T19:01:07.236+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Stock_DAG_ELT_dbt, task_id=dbt_test, run_id=manual__2024-11-14T19:00:47.068859+00:00, execution_date=20241114T190047, start_date=20241114T190056, end_date=20241114T190107
+[2024-11-14T19:01:07.274+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-14T19:01:07.289+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-14T19:01:07.291+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

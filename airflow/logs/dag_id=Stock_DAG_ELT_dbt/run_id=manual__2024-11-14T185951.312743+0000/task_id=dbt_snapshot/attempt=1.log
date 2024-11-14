@@ -1,0 +1,27 @@
+[2024-11-14T18:59:51.893+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-14T18:59:51.944+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Stock_DAG_ELT_dbt.dbt_snapshot manual__2024-11-14T18:59:51.312743+00:00 [queued]>
+[2024-11-14T18:59:51.952+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Stock_DAG_ELT_dbt.dbt_snapshot manual__2024-11-14T18:59:51.312743+00:00 [queued]>
+[2024-11-14T18:59:51.953+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-14T18:59:51.966+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2024-11-14 18:59:51.312743+00:00
+[2024-11-14T18:59:51.973+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Stock_DAG_ELT_dbt', 'dbt_snapshot', 'manual__2024-11-14T18:59:51.312743+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/Stock_DAG_ELT.py', '--cfg-path', '/tmp/tmps14voura']
+[2024-11-14T18:59:51.977+0000] {standard_task_runner.py:91} INFO - Job 84: Subtask dbt_snapshot
+[2024-11-14T18:59:51.979+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4472) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-14T18:59:51.980+0000] {standard_task_runner.py:63} INFO - Started process 4474 to run task
+[2024-11-14T18:59:52.021+0000] {task_command.py:426} INFO - Running <TaskInstance: Stock_DAG_ELT_dbt.dbt_snapshot manual__2024-11-14T18:59:51.312743+00:00 [running]> on host 214073c88124
+[2024-11-14T18:59:52.091+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Stock_DAG_ELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2024-11-14T18:59:51.312743+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-14T18:59:51.312743+00:00'
+[2024-11-14T18:59:52.092+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-14T18:59:52.109+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-14T18:59:52.111+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/dbt --project-dir /opt/***/dbt']
+[2024-11-14T18:59:52.118+0000] {subprocess.py:86} INFO - Output:
+[2024-11-14T18:59:53.890+0000] {subprocess.py:93} INFO - [0m18:59:53  Running with dbt=1.8.7
+[2024-11-14T18:59:55.302+0000] {subprocess.py:93} INFO - [0m18:59:55  Registered adapter: snowflake=1.8.4
+[2024-11-14T18:59:55.843+0000] {subprocess.py:93} INFO - [0m18:59:55  [[33mWARNING[0m]: Did not find matching node for patch with name 'snapshot_stock_rsi' in the 'snapshots' section of file 'snapshots/snapshot_stock_rsi.yaml'
+[2024-11-14T18:59:56.039+0000] {subprocess.py:93} INFO - [0m18:59:56  Found 3 models, 8 data tests, 3 sources, 575 macros
+[2024-11-14T18:59:56.042+0000] {subprocess.py:93} INFO - [0m18:59:56
+[2024-11-14T18:59:56.043+0000] {subprocess.py:93} INFO - [0m18:59:56  Nothing to do. Try checking your model configs and model specification args
+[2024-11-14T18:59:56.876+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-14T18:59:56.877+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-14T18:59:56.896+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Stock_DAG_ELT_dbt, task_id=dbt_snapshot, run_id=manual__2024-11-14T18:59:51.312743+00:00, execution_date=20241114T185951, start_date=20241114T185951, end_date=20241114T185956
+[2024-11-14T18:59:56.929+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-14T18:59:56.941+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-14T18:59:56.944+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
